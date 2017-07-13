@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Formstack Project</title>
+    <meta name="description" content="Formstack Project">
+    <meta name="author" content="Mike Doubintchik">
+
+</head>
+
+<body ng-app="formstack-app">
+<div ng-controller="MainCtrl">
+    <form name="form" role="form" novalidate>
+        <div ng-class="{'has-error': form.decimal.$invalid}">
+            <label for="decimal">Amount</label>
+            <input type="text" id="decimal" name="decimal" placeholder="Decimal" ng-model="percentage" decimal-float/>
+
+            <!-- Results: Percent or Error -->
+            <p>
+                <span ng-show="form.decimal.$error.float">{{error}}</span>
+                <span>{{percentage}}</span>
+            </p>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<script src="app/index.js"></script>
+</body>
+</html>
